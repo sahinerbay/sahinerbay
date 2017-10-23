@@ -1,0 +1,264 @@
+/* Include Normalize.css */
+@import url('./reset.css');
+
+/* Loading Cinzel, Montserra, Montserra Light */
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Montserrat:300,400');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size:62.5%;
+    font-family: 'Cinzel', serif;
+    color: #3d494c;
+}
+
+p, h3, time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+time {
+    font-weight: 300;
+    font-style: italic; 
+}
+
+.wrapper {
+    width: 95%;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid;
+    grid-gap: 10px 1%;
+}
+
+/* AUTHOR */
+.col-author {
+    background-color: #ebebeb;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.3), inset 0 0 40px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3), 0 0 40px rgba(0,0,0,.1) inset;
+}
+
+.col-author__title {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2rem;
+    letter-spacing: .15rem;
+}
+
+/* PICTURE */
+.col-frame {
+    text-align: center;
+    align-self: end;
+}
+.col-frame__picture {
+    height: 225px;
+    width: 225px;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0,0,0,.3), inset 0 0 40px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3), 0 0 40px rgba(0,0,0,.1) inset;
+}
+
+/* Styling Titles of Each Section */
+.col-work__title, .col-contact__title, .col-education__title, .col-languages__title, .col-projects__title, .col-skills__title {
+    background-color: #ebebeb;
+    font-size: 1.2rem;
+    letter-spacing: .15rem;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,.3), inset 0 0 40px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.3), 0 0 40px rgba(0,0,0,.1) inset;
+}
+
+/* WORK */
+.col-work__company, .col-education__university, .col-projects__company {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto 50px auto auto;
+    grid-gap: 15px 2%;
+}
+
+.col-work__company__title, .col-education__university__title, .col-projects__company__title {
+    text-decoration: underline;
+    margin: 0;
+}
+
+.col-work__company__desc, .col-education__university__desc, .col-projects__company__desc, .col-projects__company__web {
+    grid-column: 1/3;
+    margin: 0;
+}
+
+/* CONTACT */
+.col-contact {
+    grid-row: 3/4;
+}
+
+.col-contact__details__birthday::before, .col-contact__details__address::before, .col-contact__details__telephone::before, .col-contact__details__email::before, .col-contact__details__web::before {
+    margin-right: 10px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.col-contact__details__birthday::before {
+    content:url('../img/icons/user.png');
+}
+
+.col-contact__details__address::before {
+    content:url('../img/icons/address.png');
+}
+
+.col-contact__details__telephone::before {
+    content:url('../img/icons/telephone.png');
+}
+
+.col-contact__details__email::before {
+    content:url('../img/icons/email.png');
+}
+
+.col-contact__details__web::before {
+    content:url('../img/icons/web.png');
+}
+
+/* EDUCATION */
+
+/* PROJECTS */
+.col-projects__company {
+    grid-template-rows: repeat(3, auto auto 50px);
+}
+
+.col-projects__company__web {
+    word-break: break-all;
+}
+
+.col-projects__company__web > a {
+    color: #a2afbd;
+    transition: 1s color;
+}
+
+.col-projects__company__web > a:hover {
+    color: #3d494c;
+}
+
+
+
+/* LANGUAGES */
+.col-languages__list, .col-skills__list {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    padding-left: 1rem;
+}
+
+.col-languages__list > li {
+    font-weight: 600;
+    letter-spacing: .14rem;
+    margin-bottom: .1rem;
+    padding: 5px;
+}
+
+.col-languages__list > span {
+    font-weight: 300;
+    margin-bottom: 1rem;
+    padding-left: 5px;
+    display: inline-block;    
+}
+
+/* SKILLS */
+.col-skills__list > li {
+    margin-bottom: 1.5rem;
+    padding: 5px;
+    letter-spacing: .14rem;
+}
+
+.dev {
+    margin-bottom: 1px;
+    text-align: center;
+    color: #ccc;
+}
+
+@media screen and (min-width: 650px) {
+    .wrapper {
+        width: 80%;
+    }
+
+   .container {
+       grid-template-columns: 5fr 2fr;
+       grid-gap: 10px 20px;
+   }
+
+   .col-author {
+    grid-column: 1/3;
+    padding: 90px 20px;
+    margin-bottom: 0;
+   }
+
+   .col-frame {
+    grid-column: 3/3;
+    }
+
+    .col-work {
+        grid-column: 1/3;
+    }
+
+    .col-contact {
+        grid-row: 2/3;
+        grid-column: 3/3;
+    }
+
+    .col-education {
+        grid-column: 1/3;
+    }
+
+    .col-projects {
+        grid-column: 1/3;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .wrapper {
+        width: 70%;
+    }
+
+    .container {
+        grid-gap: 15px 40px;
+    }
+
+    .col-author {
+        padding: 70px 20px;
+    }
+
+    .col-author__title {
+        font-size: 3rem;
+        letter-spacing: .2rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .wrapper {
+        width: 50%; 
+    }
+
+    .container {
+        grid-gap: 15px 75px;
+    }
+
+    .col-author {
+        padding: 60px 20px;
+    }
+
+    .col-author__title {
+        font-size: 3.5rem;
+        letter-spacing: .5rem;
+    }
+
+    .col-work__title, .col-contact__title, .col-education__title, .col-languages__title, .col-projects__title, .col-skills__title { 
+        font-size: 1.3rem;
+    }
+}
